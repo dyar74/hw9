@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+text:
+  path: /
+  controller: App\Controller\HW9Controller::text
