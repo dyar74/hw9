@@ -8,8 +8,10 @@
 
 namespace App\Controller;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
@@ -77,18 +79,18 @@ class HW9Controller extends Controller
         return $this->redirect("https://google.com");
     }
 
+
     /**
-     *
-     *
-     * @Route(" /post/page/{number}", name="number_example_route")
+     * @Route("/post/page/{page}", name="page_example_route", defaults={"page": 1}, methods={"GET"}, requirements={"page"="/^\d{1,2}$/"})
      */
 
-    public function number($number)
+    public function numberPage(Request $query, $page)
     {
-
-
+        //$page = $query->get['page'];
+        $page = $_GET['page'];
+       
         return new Response(
-            '<html><body>number: '.$number.'</body></html>'
+            '<html><body>page: '. $page .'</body></html>'
         );
     }
 
