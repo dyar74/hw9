@@ -81,13 +81,11 @@ class HW9Controller extends Controller
 
 
     /**
-     * @Route("/post/page/{page}", name="page_example_route", defaults={"page": 1}, methods={"GET"}, requirements={"page"="/^\d{1,2}$/"})
+     * @Route("/post/page/{page}", name="page_example_route", defaults={"page": 1}, methods={"GET"}, requirements={"page"="^\d{1,2}$"})
      */
 
     public function numberPage(Request $query, $page)
     {
-        //$page = $query->get['page'];
-        $page = $_GET['page'];
        
         return new Response(
             '<html><body>page: '. $page .'</body></html>'
