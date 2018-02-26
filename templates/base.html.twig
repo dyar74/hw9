@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}
-        <h2> Test</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-        {% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/build/css/app.css') }}">
+    {% endblock %}
+    {% block javascripts %}
+        <script type="javascript" href="{{ asset('/build/js/app.js') }}"></script>
+
+    {% endblock %}
+    {% block menu  %}
+    {% include('_partial/navbar.html.twig') %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+
+
+{% endblock %}
+{% block text %}
+{% endblock %}
+
+</body>
 </html>

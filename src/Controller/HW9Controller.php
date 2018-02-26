@@ -23,9 +23,7 @@ class HW9Controller extends Controller
     {
 
 
-        return new Response(
-            'Text'
-        );
+        return $this->render('/hw9/text.html.twig');
     }
     /**
      *
@@ -86,10 +84,8 @@ class HW9Controller extends Controller
 
     public function numberPage(Request $query, $page)
     {
-       
-        return new Response(
-            '<html><body>page: '. $page .'</body></html>'
-        );
+
+        return $this->render('/hw9/number-page.html.twig', ['page' => $page]);
     }
 
 
