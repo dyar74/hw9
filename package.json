@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "css-reset-and-normalize-sass": "^0.1.2",
+    "less-loader": "^4.0.6",
     "popper": "^1.0.1",
     "popper.js": "^1.12.9"
   }

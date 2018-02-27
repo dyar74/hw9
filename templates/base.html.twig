@@ -18,17 +18,48 @@
     {% endblock %}
 </head>
 <body>
-{% block body %}
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+            {% block sidebar %}
+                <div id="sidebar">
+                    {{ render(controller(
+                        'App\\Controller\\MenuController::menu'
+                    )) }}
+                </div>
+            {% endblock %}
+
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+
+    {% block body %}
 
 
-{% endblock %}
-{% block text %}
-{% endblock %}
+    {% endblock %}
+    {% block text %}
+    {% endblock %}
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="javascript" href="{{ asset('build/js/app.js') }}"></script>
-
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 {% endblock %}
 </body>
 </html>

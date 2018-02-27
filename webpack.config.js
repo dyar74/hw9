@@ -18,7 +18,9 @@ Encore
      .enableSassLoader(function(sassOptions) {}, {
              resolveUrlLoader: false
      })
-
+    .enableLessLoader(function(lessOptions) {
+        lessOptions.relativeUrls = false;
+    })
     // uncomment for legacy applications that require $/jQuery as a global variable
      .autoProvidejQuery()
 ;

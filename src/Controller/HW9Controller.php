@@ -21,8 +21,6 @@ class HW9Controller extends Controller
 
     public function text()
     {
-
-
         return $this->render('/hw9/text.html.twig');
     }
     /**

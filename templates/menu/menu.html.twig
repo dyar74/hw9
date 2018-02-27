@@ -1,3 +1,7 @@
-<h1>
-    navbar
-</h1>
+<ul class="sidebar-nav">
+    {% for m in menu %}
+        {% if (m != "name_example") %}
+                <li><a href='{{ path(m) }}'>{{ m }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
