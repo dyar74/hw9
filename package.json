@@ -14,6 +14,7 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
+    "css-reset-and-normalize-sass": "^0.1.2",
     "popper": "^1.0.1",
     "popper.js": "^1.12.9"
   }
